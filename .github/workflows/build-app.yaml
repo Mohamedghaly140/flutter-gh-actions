@@ -19,9 +19,18 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.3.6"
-      - name: Check Dart version
-        run: dart --version
       - name: Check Flutter version
         run: flutter --version
       - name: Check Flutter doctor
         run: flutter doctor
+      - name: Clean build folder
+        run: flutter clean
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Build app APK
+        run: flutter build apk
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: supervisor_app
+          path: build\app\outputs\flutter-apk\app-release.apk
