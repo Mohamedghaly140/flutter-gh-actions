@@ -32,5 +32,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: supervisor_app
-          path: build\app\outputs\flutter-apk
+          name: supervisor-app
+          path: build\app\outputs\flutter-apk\app-release.apk
