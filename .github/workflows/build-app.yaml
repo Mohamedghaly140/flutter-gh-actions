@@ -21,6 +21,8 @@ jobs:
           flutter-version: "3.3.6"
       - name: Check Flutter version
         run: flutter --version
+      - name: Accept android licenses
+        run: flutter doctor --android-licenses
       - name: Check Flutter doctor
         run: flutter doctor
       - name: Clean build folder
